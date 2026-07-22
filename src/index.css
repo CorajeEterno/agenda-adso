@@ -51,6 +51,7 @@
 }
 
 body {
+  background-color: #fff;
   margin: 0;
 }
 
@@ -70,7 +71,7 @@ h1,
 h2 {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: black;
 }
 
 h1 {
@@ -92,6 +93,7 @@ h2 {
   }
 }
 p {
+  color: black;
   margin: 0;
 }
 
