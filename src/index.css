@@ -1,47 +1,9 @@
-
-
-body {
-  font-family: sans-serif;
-  background-color: #f2f2f2;
-  color: #222;
-  margin: 0;
-  padding: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Ajustes base del body */
+@layer base {
+ body {
+ @apply bg-gray-50 text-gray-800 font-sans;
+ }
 }
-
-a {
-  color: #008037;
-  text-decoration: none;
-}
-
-a:hover{
-  text-decoration: underline;
-}
-
-button{
-  background-color: #008037;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-button:hover{
-  background-color: #006b2f;
-}
-
-
-img{
-  max-width: 100%;
-  height: auto;
-}
-
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-}
-
-
