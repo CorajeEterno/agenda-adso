@@ -1,56 +1,58 @@
 import { useState } from "react";
 
-export default function FormularioContacto({onAgregar}){
-    const  [form, setForm] = useState({
-        nombre:"",
-        correo:"",
-        telefono:"",
-        etiqueta:""
-    });
+export default function FormularioContacto({ onAgregar }) {
+  const [form, setForm] = useState({
+    nombre: "",
+    correo: "",
+    telefono: "",
+    etiqueta: ""
+  });
 
-      const onChange = (e) => {
+  const onChange = (e) => {
     const { name, value } = e.target;
     setForm((f) => ({ ...f, [name]: value }));
   };
 
-    const onSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    if (!form.nombre.trim() || !form.telefono.trim()) {
-      alert("Completa al menos Nombre y Teléfono");
-      return;
-    }
-
-    onAgregar(form); 
-    setForm({ nombre: "", correo: "", telefono: "", etiqueta: "" });
+    if (!form.nombre || !form.telefono || !form.correo) return;
+    onAgregar(form);
+    setForm({ nombre: "", telefono: "", correo: "", etiqueta: "" });
   };
 
-    return (
+
+
+  return (
     <form onSubmit={onSubmit} className="form-contacto">
+      <label>Nombre*</label>
       <input
         name="nombre"
-        placeholder="Nombre"
         value={form.nombre}
         onChange={onChange}
+        placeholder="Ej: Ana Lopez"
       />
+      <label>Telefono*</label>
       <input
         name="telefono"
-        placeholder="Teléfono"
         value={form.telefono}
         onChange={onChange}
+        placeholder="Ej: 300 123 4567"
       />
+      <label>Correo*</label>
       <input
         name="correo"
-        placeholder="Correo"
         value={form.correo}
         onChange={onChange}
+        placeholder="Ej: ana@sena.edu.co"
       />
+      <label>Etiqueta (opcional)</label>
       <input
         name="etiqueta"
-        placeholder="Etiqueta (opcional)"
         value={form.etiqueta}
         onChange={onChange}
+        placeholder="Ej: Trabajo"
       />
-      <button type="submit">Agregar contacto</button>
+      <button className="btn-primario">Agregar contacto</button>
     </form>
   );
 }
