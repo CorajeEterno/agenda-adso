@@ -4,7 +4,7 @@
 export default function ContactoCard({ nombre, telefono, correo, etiqueta, onEliminar }) {
   return (
     <div className="bg-white shadow-sm border border-gray-200 rounded-2xl p-6 flex items-start justify-between">
-      {/* Información del contacto */}
+
       <div className="space-y-1">
         {/* Nombre */}
         <h3 className="text-xl font-semibold text-gray-800">{nombre}</h3>
