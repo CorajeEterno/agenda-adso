@@ -5,7 +5,14 @@
       "telefono": "34512345678",
       "correo": "emma@sena.edu.co",
       "etiqueta": "aprendiz",
-      "id": "pfjvxKYZg4A"
+      "id": "XT7XNfNiEeA"
+    },
+    {
+      "nombre": "lluis",
+      "telefono": "345 456 4566",
+      "correo": "e@gmail.com",
+      "etiqueta": "aprendiz",
+      "id": "7jM5Z_g_gPQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
