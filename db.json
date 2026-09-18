@@ -1,18 +1,18 @@
 {
   "contactos": [
     {
-      "nombre": "emmanuel sierra holguin",
-      "telefono": "34512345678",
+      "nombre": "emmanuel sierra ",
+      "telefono": "3451234533",
       "correo": "emma@sena.edu.co",
       "etiqueta": "aprendiz",
-      "id": "XT7XNfNiEeA"
+      "id": "NS-j3AjrBJg"
     },
     {
-      "nombre": "lluis",
-      "telefono": "345 456 4566",
-      "correo": "e@gmail.com",
-      "etiqueta": "aprendiz",
-      "id": "7jM5Z_g_gPQ"
+      "nombre": "luis",
+      "telefono": "3456780981",
+      "correo": "luis@gmail.com",
+      "etiqueta": "usuario",
+      "id": "QGCuKXUSa8U"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

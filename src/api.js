@@ -1,7 +1,7 @@
-//Importamos la URL base desde config.js
+// Importamos la URL base desde config.js
 import { API_BASE_URL } from "./config";
 
-// Función GET: listar contactos
+// Función GET: listar contactos (READ)
 export async function listarContactos() {
   // Hacemos un GET a la URL base (lista de contactos)
   const res = await fetch(API_BASE_URL);
@@ -13,7 +13,7 @@ export async function listarContactos() {
   return res.json();
 }
 
-// Función POST: crear un nuevo contacto
+// Función POST: crear un nuevo contacto (CREATE)
 export async function crearContacto(data) {
   // Hacemos un POST a la URL base con el objeto recibido
   const res = await fetch(API_BASE_URL, {
@@ -29,7 +29,23 @@ export async function crearContacto(data) {
   return res.json();
 }
 
-// Función DELETE: eliminar contacto por id
+// Función PUT: actualizar un contacto existente (UPDATE)
+export async function actualizarContacto(id, data) {
+  // Hacemos un PUT a /contactos/:id usando la URL base
+  const res = await fetch(`${API_BASE_URL}/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" }, // Indicamos que el body es JSON
+    body: JSON.stringify(data), // Enviamos el contacto actualizado
+  });
+
+  // Validamos la respuesta
+  if (!res.ok) throw new Error("Error al actualizar el contacto");
+
+  // Devolvemos el contacto actualizado que regresa la API
+  return res.json();
+}
+
+// Función DELETE: eliminar contacto por id (DELETE)
 export async function eliminarContactoPorId(id) {
   // Hacemos un DELETE a /contactos/:id usando la URL base
   const res = await fetch(`${API_BASE_URL}/${id}`, { method: "DELETE" });
@@ -40,3 +56,4 @@ export async function eliminarContactoPorId(id) {
   // Devolvemos true indicando éxito
   return true;
 }
+
